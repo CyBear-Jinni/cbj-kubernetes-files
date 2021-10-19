@@ -7,7 +7,7 @@ metadata:
   labels:
     app: remote-pipes
 spec:
-  replicas: 1
+  replicas: 60
   selector:
     matchLabels:
       app: remote-pipes

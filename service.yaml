@@ -7,6 +7,7 @@ metadata:
 #  annotations:
 #    service.beta.kubernetes.io/linode-loadbalancer-default-proxy-protocol: v2
 spec:
+#  clusterIP: None # Headless services
   selector:
     app: remote-pipes
   sessionAffinity: ClientIP
