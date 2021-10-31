@@ -4,9 +4,9 @@ kind: Deployment
 metadata:
   name: remote-pipes-deployment
   labels:
-    app: homeservice-one
+    app: homeservice-one # this one needs to change dynamically
 spec:
-  replicas: 1
+#  replicas: 1
   selector:
     matchLabels:
       app: homeservice-one
