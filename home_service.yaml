@@ -3,12 +3,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: homeservice-one-service # this one needs to change dynamically
+  name: nameservice # this one needs to change dynamically without -
   labels:
     app: homeservice-one-label
 spec:
   selector:
-    app: homeservice-one # this one needs to change dynamically
+    app: pod-name # this one needs to change dynamically
   ports:
     - protocol: TCP
       port: 50051
