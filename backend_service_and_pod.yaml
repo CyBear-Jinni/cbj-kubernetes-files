@@ -1,3 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homenamedeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homepodname
+  template:
+    metadata:
+      labels:
+        app: homepodname
+    spec:
+      containers:
+      - name: homecontainer
+        image: guyluz11/cbj-rp-test:latest
+        ports:
+        - containerPort: 50051
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -11,38 +31,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 50051
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myapppod
-  labels:
-    app: homepodname
-spec:
-  containers:
-  - name: myapp-container
-    image: guyluz11/cbj-rp-test:latest
-    ports:
-    - containerPort: 50051
-
-# Is it good practice to use deploy for each home?
-# ---
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: homenamedeployment
-# spec:
-#   replicas: 1  # Set the number of replicas as needed
-#   selector:
-#     matchLabels:
-#       app: homepodname
-#   template:
-#     metadata:
-#       labels:
-#         app: homepodname
-#     spec:
-#       containers:
-#       - name: homecontainer
-#         image: guyluz11/cbj-rp-test:latest
-#         ports:
-#         - containerPort: 50051

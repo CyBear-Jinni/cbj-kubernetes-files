@@ -6,7 +6,9 @@ Change Node password
 
 
 # Upload all 
-export KUBECONFIG=/home/guyluz/Documents/kuber/test-kubeconfig.yaml 
+export KUBECONFIG=/home/guyluz/Documents/kuber/test-kubeconfig.yaml
+kubectl delete configmap nginx-config 
+kubectl delete deployment nginx-deployment
 kubectl create configmap nginx-config --from-file=nginx.conf
 kubectl apply -f backend_service_and_pod.yaml
 kubectl apply -f nginx_deployment.yaml
