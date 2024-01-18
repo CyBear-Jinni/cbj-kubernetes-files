@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homenamedeployment
+  name: namedeployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: homepodname
+      app: namepod
   template:
     metadata:
       labels:
-        app: homepodname
+        app: namepod
     spec:
       containers:
       - name: homecontainer
@@ -21,12 +21,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myappservice
+  name: nameservice
   labels:
-    app: mservice
+    app: nameservicelabel
 spec:
   selector:
-    app: homepodname
+    app: namepod
   ports:
     - protocol: TCP
       port: 80

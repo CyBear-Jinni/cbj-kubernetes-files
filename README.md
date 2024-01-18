@@ -15,6 +15,7 @@ kubectl apply -f nginx_deployment.yaml
 kubectl apply -f load_balancer.yaml
 
 
+
 ## Configure kubectl (homes-kubeconfig.yaml)
 https://www.youtube.com/watch?v=7bA0gTroJjw
 
