@@ -2,9 +2,15 @@
 
 Change Node password
 
-export KUBECONFIG=/home/guyluz/Documents/kuber/test-kubeconfig.yaml 
 
+
+
+# Upload all 
+export KUBECONFIG=/home/guyluz/Documents/kuber/test-kubeconfig.yaml 
 kubectl create configmap nginx-config --from-file=nginx.conf
+kubectl apply -f backend_service_and_pod.yaml
+kubectl apply -f nginx_deployment.yaml
+kubectl apply -f load_balancer.yaml
 
 
 ## Configure kubectl (homes-kubeconfig.yaml)
